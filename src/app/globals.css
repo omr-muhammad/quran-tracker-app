@@ -1,42 +1,227 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* === Font Face === */
+@font-face {
+  font-family: 'Amiri';
+  src: url('/fonts/Amiri-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Amiri';
+  src: url('/fonts/Amiri-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
+/* === CSS Reset === */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Amiri', 'Traditional Arabic', 'Noto Naskh Arabic', serif;
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === Theme Variables === */
+:root {
+  --font-family: 'Amiri', 'Traditional Arabic', 'Noto Naskh Arabic', serif;
+}
+
+/* Dark Theme (Primary) */
+[data-theme="dark"] {
+  --bg-primary: #0a1929;
+  --bg-secondary: #0f2744;
+  --bg-card: #132f4c;
+  --bg-card-hover: #1a3d63;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-popup: #0f2744;
+  --bg-input: #0a1929;
+  --bg-banner: linear-gradient(135deg, #0d2137 0%, #1a3a5f 50%, #0d2137 100%);
+  --bg-button: #2d5f8d;
+  --bg-button-hover: #3a7ab5;
+  --bg-active-row: rgba(45, 95, 141, 0.3);
+  --bg-danger: #5f2120;
+  --bg-danger-hover: #7f2d2c;
+  --bg-success: #1a4731;
+  --bg-success-hover: #236b48;
+
+  --text-primary: #e0e8f0;
+  --text-secondary: #a0b4c8;
+  --text-muted: #6b8299;
+  --text-accent: #64b5f6;
+  --text-on-button: #ffffff;
+  --text-danger: #f48fb1;
+  --text-success: #81c784;
+  --text-verse: #ffd54f;
+
+  --border-color: #1e3a5f;
+  --border-focus: #64b5f6;
+  --border-card: #1e4976;
+
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-popup: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --shadow-banner: 0 4px 30px rgba(0, 0, 0, 0.4);
+
+  --scrollbar-track: #0a1929;
+  --scrollbar-thumb: #1e3a5f;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f4f8;
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+  --bg-popup: #ffffff;
+  --bg-input: #f5f7fa;
+  --bg-banner: linear-gradient(135deg, #e8f0fe 0%, #d4e4f7 50%, #e8f0fe 100%);
+  --bg-button: #1976d2;
+  --bg-button-hover: #1565c0;
+  --bg-active-row: rgba(25, 118, 210, 0.1);
+  --bg-danger: #ffebee;
+  --bg-danger-hover: #ffcdd2;
+  --bg-success: #e8f5e9;
+  --bg-success-hover: #c8e6c9;
+
+  --text-primary: #1a2332;
+  --text-secondary: #546e7a;
+  --text-muted: #90a4ae;
+  --text-accent: #1976d2;
+  --text-on-button: #ffffff;
+  --text-danger: #c62828;
+  --text-success: #2e7d32;
+  --text-verse: #bf8c00;
+
+  --border-color: #e0e6ed;
+  --border-focus: #1976d2;
+  --border-card: #e0e6ed;
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-popup: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --shadow-banner: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+  --scrollbar-track: #f5f7fa;
+  --scrollbar-thumb: #cfd8dc;
+}
+
+/* === Apply Theme === */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+/* === Common Utilities === */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input, select {
+  font-family: var(--font-family);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--border-focus);
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: var(--text-accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* === Toast Notification === */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  z-index: 1100;
+  animation: slideUp 0.3s ease;
+  direction: rtl;
+}
+
+.toast.success {
+  background: var(--bg-success);
+  color: var(--text-success);
+  border: 1px solid var(--text-success);
+}
+
+.toast.error {
+  background: var(--bg-danger);
+  color: var(--text-danger);
+  border: 1px solid var(--text-danger);
 }

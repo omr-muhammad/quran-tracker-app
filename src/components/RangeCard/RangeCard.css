@@ -1,0 +1,215 @@
+.range-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-card);
+    animation: slideUp 0.3s ease;
+    cursor: grab;
+    position: relative;
+}
+
+.range-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+}
+
+.range-card:active {
+    cursor: grabbing;
+}
+
+.range-card.editing,
+.range-card.delete-confirm-card {
+    cursor: default;
+}
+
+.range-card.editing:hover,
+.range-card.delete-confirm-card:hover {
+    transform: none;
+}
+
+/* Actions (top-left for RTL = visually top-right, but in RTL it's correct) */
+.range-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.range-action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.range-action-btn:hover {
+    background: var(--bg-card-hover);
+}
+
+/* Card body */
+.range-card-body {
+    flex: 1;
+    text-align: center;
+}
+
+.range-pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.range-page {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.range-dash {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.range-page-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Drag handle */
+.range-drag-handle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    cursor: grab;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.range-drag-handle:active {
+    cursor: grabbing;
+}
+
+/* Edit form */
+.range-edit-form {
+    width: 100%;
+}
+
+.range-edit-inputs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.range-edit-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.range-edit-field label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.range-edit-field input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.range-edit-field input:focus {
+    border-color: var(--border-focus);
+}
+
+.range-edit-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.range-edit-actions button {
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.btn-save {
+    background: var(--bg-button);
+    color: var(--text-on-button);
+}
+
+.btn-save:hover {
+    background: var(--bg-button-hover);
+}
+
+.range-error {
+    color: var(--text-danger);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Delete confirmation */
+.delete-confirm-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+}
+
+.delete-confirm-text {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+.delete-confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.delete-confirm-actions button {
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.btn-delete-yes {
+    background: var(--bg-danger);
+    color: var(--text-danger);
+}
+
+.btn-delete-yes:hover {
+    background: var(--bg-danger-hover);
+}
+
+.btn-delete-no {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color) !important;
+}
+
+.btn-delete-no:hover {
+    background: var(--bg-card-hover);
+}

@@ -1,0 +1,90 @@
+.schedule-popup {
+    max-height: 75vh;
+}
+
+.schedule-table-wrapper {
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;
+}
+
+.schedule-table thead th {
+    padding: 10px 14px;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-table tbody tr {
+    transition: background 0.2s ease;
+    border-radius: 8px;
+}
+
+.schedule-table tbody td {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Active day */
+.schedule-table tbody tr.active-day {
+    background: var(--bg-active-row);
+}
+
+.schedule-table tbody tr.active-day td {
+    color: var(--text-accent);
+    font-weight: 700;
+}
+
+.schedule-day-name {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.active-indicator {
+    color: var(--text-accent);
+    font-size: 0.6rem;
+    animation: pulse 2s infinite;
+}
+
+.schedule-pages {
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    text-align: right;
+}
+
+.schedule-count {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Empty state */
+.schedule-empty {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.schedule-empty p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.schedule-empty-hint {
+    font-size: 0.85rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 8px;
+}

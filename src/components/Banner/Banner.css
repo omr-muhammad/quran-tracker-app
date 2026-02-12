@@ -1,0 +1,159 @@
+.banner {
+    background: var(--bg-banner);
+    padding: 20px 20px 16px;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-banner);
+    flex-shrink: 0;
+}
+
+.banner-completed {
+    border-bottom: 3px solid var(--text-success);
+}
+
+.banner-verse {
+    font-size: 1.15rem;
+    color: var(--text-verse);
+    margin-bottom: 16px;
+    line-height: 2;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.banner-content {
+    animation: fadeIn 0.4s ease;
+}
+
+.banner-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.banner-day {
+    font-size: 1.1rem;
+    color: var(--text-accent);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.banner-range {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.banner-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.banner-page-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.banner-page-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.banner-page-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.banner-ayah-placeholder {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.banner-separator {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+
+.banner-page-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.banner-complete-btn {
+    padding: 10px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--bg-button);
+    color: var(--text-on-button);
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.banner-complete-btn:hover:not(:disabled) {
+    background: var(--bg-button-hover);
+    transform: scale(1.03);
+}
+
+.banner-complete-btn.completed {
+    background: var(--bg-success);
+    color: var(--text-success);
+    cursor: default;
+}
+
+.banner-complete-btn:disabled {
+    opacity: 0.9;
+}
+
+/* Carryover */
+.banner-carryover {
+    margin-top: 12px;
+    padding: 12px;
+    background: rgba(255, 152, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 152, 0, 0.2);
+    margin-bottom: 12px;
+}
+
+.carryover-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.carryover-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.carryover-range {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* Empty state */
+.banner-empty {
+    padding: 8px 0;
+}
+
+.banner-empty p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.banner-empty-hint {
+    font-size: 0.85rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 4px;
+}

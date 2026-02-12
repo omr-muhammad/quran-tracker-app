@@ -1,0 +1,178 @@
+.settings-popup {
+    max-height: 80vh;
+}
+
+.settings-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.settings-section {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.settings-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.settings-label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.settings-input {
+    width: 80px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.settings-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+    padding-left: 32px;
+}
+
+/* Range form */
+.settings-range-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.settings-range-inputs {
+    display: flex;
+    gap: 12px;
+}
+
+.settings-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.settings-field label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.settings-field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.settings-add-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--bg-button);
+    color: var(--text-on-button);
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.settings-add-btn:hover {
+    background: var(--bg-button-hover);
+    transform: translateY(-1px);
+}
+
+.settings-error {
+    color: var(--text-danger);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.settings-success {
+    color: var(--text-success);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* Toggle switch */
+.settings-toggle {
+    width: 52px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--border-color);
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.settings-toggle.active {
+    background: var(--bg-button);
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.settings-toggle.active .toggle-knob {
+    right: auto;
+    left: 3px;
+}
+
+/* Time picker */
+.settings-time {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 360px) {
+    .settings-range-inputs {
+        flex-direction: column;
+    }
+}

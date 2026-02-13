@@ -76,7 +76,7 @@ export default function Banner({
     return (
         <div className={`banner ${isCompleted ? 'banner-completed' : ''}`}>
             <div className="banner-verse">
-                وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ
+                تَعاهَدُوا القُرْآنَ، فَوالذي نَفْسِي بيَدِهِ لَهو أشَدُّ تَفَصِّيًا مِنَ الإبِلِ في عُقُلِها.
             </div>
 
             <div className="banner-content">

@@ -25,7 +25,7 @@
 }
 
 .banner-label {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 4px;
 }
@@ -59,7 +59,7 @@
 }
 
 .banner-page-label {
-    font-size: 0.8rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
 }
 
@@ -70,7 +70,7 @@
 }
 
 .banner-ayah-placeholder {
-    font-size: 0.75rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
     opacity: 0.6;
     font-style: italic;

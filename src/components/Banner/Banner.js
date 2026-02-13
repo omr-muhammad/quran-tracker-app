@@ -6,7 +6,6 @@ import {
     getCurrentDayIndex,
     getCycleStartDate,
     formatPageRange,
-    getToday,
     getTotalPages,
 } from '../../utils/calculations';
 import { getToday as getTodayDate, getYesterday } from '../../utils/storage';
@@ -63,7 +62,7 @@ export default function Banner({
         return (
             <div className="banner">
                 <div className="banner-verse">
-                    وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ
+                    تَعاهَدُوا القُرْآنَ، فَوالذي نَفْسِي بيَدِهِ لَهو أشَدُّ تَفَصِّيًا مِنَ الإبِلِ في عُقُلِها.
                 </div>
                 <div className="banner-empty">
                     <p>لم يتم إضافة محفوظ بعد</p>
@@ -80,30 +79,30 @@ export default function Banner({
             </div>
 
             <div className="banner-content">
-                <div className="banner-label">الورد اليومى</div>
-                <div className="banner-day">{todaySchedule.dayName}</div>
+                <div className="banner-label">ورد {todaySchedule.dayName} - {todaySchedule.pageCount} صفحة.</div>
+                {/* <div className="banner-day"></div> */}
 
                 <div className="banner-range">
                     {todaySchedule.segments.map((seg, i) => (
                         <div key={i} className="banner-segment">
                             <div className="banner-page-group">
-                                <span className="banner-page-label">صفحة</span>
-                                <span className="banner-page-number">{seg.start}</span>
+                                <span className="banner-page-label">من صفحة {seg.start}</span>
+                                {/* <span className="banner-page-number"></span> */}
                                 <span className="banner-ayah-placeholder">نص الآية</span>
                             </div>
-                            <span className="banner-separator">—</span>
+                            <span className="banner-separator">|</span>
                             <div className="banner-page-group">
-                                <span className="banner-page-label">صفحة</span>
-                                <span className="banner-page-number">{seg.end}</span>
+                                <span className="banner-page-label">إلى صفحة {seg.end}</span>
+                                {/* <span className="banner-page-number">{seg.end}</span> */}
                                 <span className="banner-ayah-placeholder">نص الآية</span>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="banner-page-count">
+                {/* <div className="banner-page-count">
                     {todaySchedule.pageCount} صفحة
-                </div>
+                </div> */}
             </div>
 
             {/* Carryover section */}

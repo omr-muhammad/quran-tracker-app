@@ -209,7 +209,10 @@ export function getCycleStartDate(settings, currentCycle) {
 
     // Default: most recent occurrence of start day
     const start = getMostRecentDay(settings.startDay);
-    return start.toISOString().split('T')[0];
+    const year = start.getFullYear();
+    const month = String(start.getMonth() + 1).padStart(2, '0');
+    const day = String(start.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
 }
 
 /**

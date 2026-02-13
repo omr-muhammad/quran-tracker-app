@@ -5,6 +5,7 @@ import Popup from '../Popup/Popup';
 import { validateRange, validateDays } from '../../utils/validation';
 import { DAY_NAMES, DAY_KEYS } from '../../utils/calculations';
 import './Settings.css';
+import { countFormula } from '@/utils/formatter';
 
 export default function Settings({
     isOpen,
@@ -33,7 +34,7 @@ export default function Settings({
         setNewStart('');
         setNewEnd('');
         setRangeError('');
-        setRangeSuccess('تم إضافة النطاق بنجاح');
+        setRangeSuccess('تم إضافة المحفوظ بنجاح');
         setTimeout(() => setRangeSuccess(''), 2000);
     };
 
@@ -88,7 +89,7 @@ export default function Settings({
                             min={1}
                             max={30}
                         />
-                        <span className="settings-label">يوم</span>
+                        <span className="settings-label">{countFormula(settings.reviewDays, "d", false)}</span>
                     </div>
                     {daysError && <p className="settings-error">{daysError}</p>}
                 </div>
@@ -109,7 +110,7 @@ export default function Settings({
 
                 {/* Add Range */}
                 <div className="settings-section">
-                    <h3 className="settings-section-title">إضافة نطاق محفوظ</h3>
+                    <h3 className="settings-section-title">إضافة محفوظ</h3>
                     <div className="settings-range-form">
                         <div className="settings-range-inputs">
                             <div className="settings-field">
@@ -138,7 +139,7 @@ export default function Settings({
                         {rangeError && <p className="settings-error">{rangeError}</p>}
                         {rangeSuccess && <p className="settings-success">{rangeSuccess}</p>}
                         <button className="settings-add-btn" onClick={handleAddRange}>
-                            إضافة النطاق
+                            إضافة المحفوظ
                         </button>
                     </div>
                 </div>

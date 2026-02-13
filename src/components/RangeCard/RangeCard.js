@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import './RangeCard.css';
 import { validateRange } from '../../utils/validation';
+import { countFormula } from '@/utils/formatter';
 
 export default function RangeCard({
     range,
@@ -58,10 +59,10 @@ export default function RangeCard({
         return (
             <div className="range-card delete-confirm-card">
                 <p className="delete-confirm-text">
-                    هل تريد حذف النطاق ({range.start} - {range.end})؟
+                    هل تريد حذف المحفوظ ({range.start} - {range.end})؟
                 </p>
                 <div className="delete-confirm-actions">
-                    <button className="btn-delete-yes" onClick={confirmDelete}>نعم، حذف</button>
+                    <button className="btn-delete-yes" onClick={confirmDelete}>نعم</button>
                     <button className="btn-delete-no" onClick={() => setShowDeleteConfirm(false)}>إلغاء</button>
                 </div>
             </div>
@@ -127,7 +128,7 @@ export default function RangeCard({
                     <span className="range-dash">—</span>
                     <span className="range-page">{range.end}</span>
                 </div>
-                <div className="range-page-count">{pageCount} صفحة</div>
+                <div className="range-page-count">{countFormula(pageCount, "p")}</div>
             </div>
             <div className="range-drag-handle" aria-label="اسحب لإعادة الترتيب">
                 ⋮⋮

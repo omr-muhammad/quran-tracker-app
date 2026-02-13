@@ -10,6 +10,7 @@ import {
 } from '../../utils/calculations';
 import { getToday as getTodayDate, getYesterday } from '../../utils/storage';
 import './Banner.css';
+import { countFormula } from '@/utils/formatter';
 
 export default function Banner({
     ranges,
@@ -79,7 +80,7 @@ export default function Banner({
             </div>
 
             <div className="banner-content">
-                <div className="banner-label">ورد {todaySchedule.dayName} - {todaySchedule.pageCount} صفحة.</div>
+                <div className="banner-label">ورد {todaySchedule.dayName} - {countFormula(todaySchedule.pageCount, "p")}</div>
                 {/* <div className="banner-day"></div> */}
 
                 <div className="banner-range">
@@ -108,11 +109,11 @@ export default function Banner({
             {/* Carryover section */}
             {carriedOverDays.length > 0 && (
                 <div className="banner-carryover">
-                    <div className="carryover-icon">😔</div>
-                    <div className="carryover-label">ورد مُرحَّل</div>
+                    {/* <div className="carryover-icon">😔</div> */}
+                    <div className="carryover-label">ورد مُرحَّل 😔</div>
                     {carriedOverDays.map((day, i) => (
                         <div key={i} className="carryover-range">
-                            {formatPageRange(day.segments)} ({day.pageCount} صفحة)
+                            {formatPageRange(day.segments)} ({countFormula(day.pageCount, "p")})
                         </div>
                     ))}
                 </div>

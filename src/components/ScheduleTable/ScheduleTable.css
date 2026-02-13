@@ -10,6 +10,11 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 4px;
+    direction: rtl !important;
+}
+
+.schedule-table * {
+    direction: inherit !important;
 }
 
 .schedule-table thead th {
@@ -67,7 +72,7 @@
 }
 
 .schedule-count {
-    text-align: center;
+    /* text-align: center; */
     color: var(--text-secondary);
     font-size: 0.85rem;
 }

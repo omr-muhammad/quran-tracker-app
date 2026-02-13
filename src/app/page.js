@@ -10,6 +10,7 @@ import Popup from '../components/Popup/Popup';
 import { getYesterday, getToday } from '../utils/storage';
 import { getTotalPages } from '../utils/calculations';
 import './page.css';
+import { countFormula } from '@/utils/formatter';
 
 export default function Home() {
   const {
@@ -145,7 +146,7 @@ export default function Home() {
           <div className="ranges-container">
             <div className="ranges-header">
               <h2 className="ranges-title">المحفوظ</h2>
-              <span className="ranges-total">{totalPages} صفحة</span>
+              <span className="ranges-total">{countFormula(totalPages, "p")}</span>
             </div>
             <div className="ranges-list">
               {data.ranges.map((range) => (

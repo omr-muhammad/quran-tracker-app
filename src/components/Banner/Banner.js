@@ -109,7 +109,7 @@ export default function Banner({
                 <span className="banner-page-label">من صفحة {seg.start}</span>
                 {/* <span className="banner-page-number"></span> */}
                 <span className="banner-ayah-placeholder">
-                  {displayTextByWordNumber(dic[seg.start].start)}...
+                  {displayTextByWordNumber(dic[seg.start].start, 21)}
                 </span>
               </div>
               <span className="banner-separator">|</span>
@@ -117,7 +117,7 @@ export default function Banner({
                 <span className="banner-page-label">إلى صفحة {seg.end}</span>
                 {/* <span className="banner-page-number">{seg.end}</span> */}
                 <span className="banner-ayah-placeholder">
-                  {displayTextByWordNumber(dic[seg.end].end)}...
+                  {displayTextByWordNumber(dic[seg.end].end, 21)}
                 </span>
               </div>
             </div>

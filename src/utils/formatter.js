@@ -36,6 +36,7 @@ export function displayTextByWordNumber(text, wordsCount = 11) {
   }
 
   const splitted = text.split(" ");
+  const sliced = splitted.slice(0, wordsCount).join(" ");
 
-  return splitted.slice(0, wordsCount).join(" ");
+  return sliced.length >= text.length ? sliced + "." : sliced + "...";
 }
